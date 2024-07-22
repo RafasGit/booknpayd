@@ -4,6 +4,7 @@
 import { useSession } from 'next-auth/react'
 import { usePathname } from 'next/navigation'
 //import { LogOut } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
@@ -26,6 +27,8 @@ export const NavbarRoutes = () => {
          {data?.user ? (
           <div className="ml-auto flex gap-x-2">
             {/* {isTeacherPage || isCoursePage ? ( */}
+            <Image src="/logo.svg" alt="logo" width={50} height={50} />
+
             <Link href="/">
                 <Button size="sm" variant="ghost">  
                 <h2 className="hover:scale-105 hover:text-primary text-lg">Home</h2>

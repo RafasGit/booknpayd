@@ -33,7 +33,7 @@ const teacherRoutes = [
 export const SidebarRoutes = () => {
     const pathname = usePathname()
   
-    const isTeacherPage = pathname?.startsWith('/teacher')
+   
   
     const routes = isTeacherPage ? teacherRoutes : guestRoutes
     return (

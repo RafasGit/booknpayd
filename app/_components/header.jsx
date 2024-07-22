@@ -35,7 +35,7 @@ const Header = () => {
     </div>
     <div className="mr-0 pr-0 items-end relative  left-0 right-20" >
       {data?.user ? (
-          <div className="absolute pt-6 flex gap-4 right-0">
+          <div className="absolute pt-2 flex gap-4 right-0">
           <Link href="/">
                     <Button size="sm" variant="ghost">
                       <LogOut className="mr-2 h-4 w-4" />
@@ -48,8 +48,8 @@ const Header = () => {
             <Image
               src={data?.user?.image}
               alt="profile"
-              width={40}
-              height={40}
+              width={35}
+              height={30}
               className="rounded-full "
             />
           </DropdownMenuTrigger>

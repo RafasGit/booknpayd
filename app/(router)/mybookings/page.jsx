@@ -64,7 +64,7 @@ const MyBooking = () => {
               <BookingHistoryList bookingHistory={filterData("booked")} />
             </TabsContent>
             <TabsContent value="completed">
-                comp;eted
+                
               <BookingHistoryList
                 bookingHistory={bookingHistory}
                 type="completed"

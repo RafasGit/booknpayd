@@ -35,7 +35,7 @@ export const SidebarRoutes = () => {
   
    
   
-    const routes = isTeacherPage ? teacherRoutes : guestRoutes
+    const routes = guestRoutes
     return (
       <div className="flex w-full flex-col">
         {routes.map((route) => (

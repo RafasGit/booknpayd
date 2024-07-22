@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button";
 import { signIn, useSession, signOut } from "next-auth/react";
 import Image from "next/image";
 import {
@@ -9,7 +9,8 @@ import {
     DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
-  } from "@/components/ui/dropdown-menu";
+  } from "../../components/ui/dropdown-menu";
+
 import  React, { useEffect } from 'react'
 import Link from "next/link";
 

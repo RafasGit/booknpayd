@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import BookingHistoryList from "./_components/BookingHistory";
+ import BookingHistoryList from "./_components/BookingHistory";
 import GlobalApi from "@/app/_services/GlobalApi";
 import { useSession } from "next-auth/react";
 
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 const MyBooking = () => {
     const [bookingHistory, setBookingHistory] = useState([]);

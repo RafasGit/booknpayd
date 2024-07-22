@@ -29,7 +29,7 @@ const Header = () => {
   return (
     <div className="p-5 shadow-sm flex justify-between">
     <div className="flex gap-8 items-center">
-      <Image src="/logo.svg" alt="logo" width={50} height={50} />
+      {/* <Image src="/logo.svg" alt="logo" width={50} height={50} /> */}
       <div className="md:flex items-center gap-6 hidden">
        <Navbar />
       </div>

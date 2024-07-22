@@ -4,7 +4,7 @@
 import { useSession } from 'next-auth/react'
 import { usePathname } from 'next/navigation'
 //import { LogOut } from 'lucide-react'
-import i
+ 
 import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'

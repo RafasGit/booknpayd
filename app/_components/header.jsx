@@ -1,7 +1,8 @@
 "use client";
-import { Button } from "../../components/ui/button";
 import { signIn, useSession, signOut } from "next-auth/react";
+
 import Image from "next/image";
+import { Button } from "../../components/ui/button";
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -10,7 +11,9 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
   } from "../../components/ui/dropdown-menu";
-
+  import { NavbarRoutes } from "@/components/ui/navbar-routes";
+  
+import { LogOut } from "lucide-react";
 import  React, { useEffect } from 'react'
 import Link from "next/link";
 
@@ -27,13 +30,19 @@ const Header = () => {
     <div className="flex gap-8 items-center">
       <Image src="/logo.svg" alt="logo" width={50} height={50} />
       <div className="md:flex items-center gap-6 hidden">
-        <h2 className="hover:scale-105 hover:text-primary">Home</h2>
-        <h2 className="hover:scale-105 hover:text-primary">Services</h2>
-        <h2 className="hover:scale-105 hover:text-primary">About Us</h2>
+        <NavbarRoutes />
       </div>
     </div>
-    <div>
+    <div className="mr-0 pr-0 items-end relative  left-0 right-20" >
       {data?.user ? (
+          <div className="absolute pt-6 flex gap-4 right-0">
+          <Link href="/">
+                    <Button size="sm" variant="ghost">
+                      <LogOut className="mr-2 h-4 w-4" />
+                      <h2 className="hover:scale-105 hover:text-primary text-lg">Exit</h2>
+                    </Button>
+                  </Link>
+          
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Image
@@ -41,7 +50,7 @@ const Header = () => {
               alt="profile"
               width={40}
               height={40}
-              className="rounded-full"
+              className="rounded-full "
             />
           </DropdownMenuTrigger>
           <DropdownMenuContent>
@@ -55,11 +64,13 @@ const Header = () => {
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
+        </div>
       ) : (
         <Button onClick={() => signIn("descope")}>Login / Sign Up </Button>
       )}
+      </div>
     </div>
-  </div>
+   
   )
 }
 

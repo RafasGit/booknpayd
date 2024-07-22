@@ -12,6 +12,7 @@ import {
     DropdownMenuTrigger,
   } from "../../components/ui/dropdown-menu";
   import { NavbarRoutes } from "@/components/navbar-routes";
+ import { Navbar } from "./navbar";
   
 import { LogOut } from "lucide-react";
 import  React, { useEffect } from 'react'
@@ -30,9 +31,11 @@ const Header = () => {
     <div className="flex gap-8 items-center">
       <Image src="/logo.svg" alt="logo" width={50} height={50} />
       <div className="md:flex items-center gap-6 hidden">
-        <NavbarRoutes />
+       <Navbar />
       </div>
     </div>
+
+
     <div className="mr-0 pr-0 items-end relative  left-0 right-20" >
       {data?.user ? (
           <div className="absolute pt-2 flex gap-4 right-0">

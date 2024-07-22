@@ -11,7 +11,7 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
   } from "../../components/ui/dropdown-menu";
-  import { NavbarRoutes } from "@/components/ui/navbar-routes";
+  import { NavbarRoutes } from "@/components/navbar-routes";
   
 import { LogOut } from "lucide-react";
 import  React, { useEffect } from 'react'

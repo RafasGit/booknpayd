@@ -2,14 +2,18 @@
 import React, { useEffect, useState } from "react";
  import BookingHistoryList from "./_components/BookingHistory";
 import GlobalApi from "@/app/_services/GlobalApi";
-import { useSession } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
+ 
 
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 const MyBooking = () => {
     const [bookingHistory, setBookingHistory] = useState([]);
-    const { data } = useSession();
-  
+    const { data, status } = useSession();
+ 
+
+   
+
     useEffect(() => {
       data && GetUserBookingHistory();
       // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -31,6 +35,21 @@ const MyBooking = () => {
     
         return result;
       };
+
+      useEffect(() => {
+        checkUserAuth();
+      }, []);
+
+      const checkUserAuth = () => {
+        if (status == "loading") {
+          <p>Loading</p>;
+        }
+    
+        if (status == "unauthenticated") {
+          //redirect to login page
+          signIn("descope");
+        }
+      }
      
 
       return (
@@ -38,7 +57,7 @@ const MyBooking = () => {
           <h2 className="font-bold text-[20px] my-2">My Bookings</h2>
           <Tabs defaultValue="booked" className="w-full">
             <TabsList className="w-full justify-start">
-              <TabsTrigger value="booked">Boked</TabsTrigger>
+              <TabsTrigger value="booked">Booked</TabsTrigger>
               <TabsTrigger value="completed">Completed</TabsTrigger>
             </TabsList>
             <TabsContent value="booked">

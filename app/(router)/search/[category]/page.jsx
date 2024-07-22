@@ -8,28 +8,13 @@ import { redirect } from "next/navigation";
 import { useRouter } from "next/navigation"; 
 
 const BusinessByCategory = ({params}) => {
-  const userId = descopeClient.management.user.loadByUserId(userId)
+
   const router = useRouter();
   const { data: session, status } = useSession(); // Destructure session data and status
 
   // Initialize state with session data
-  const [sessionState, setSessionState] = useState(session);
-
-  useEffect(() => {
-    // Update state when session changes
-    setSessionState(session);
-
-    // Check if the user is not authenticated
-    if (!sessionState?.user) {
-      signIn('descope').then(() => {
-        // After successful sign-in, redirect the user
-        router.push('/search/datascience');
-      }).catch(error => {
-        console.error("Sign-in failed:", error);
-      });
-    }
-  }, [sessionState]);
-
+  
+ 
     console.log("`${params.category}` why")
  //   console.log(params.category)
     const [businessList, setBusinessList] = React.useState([]);
@@ -45,7 +30,9 @@ const BusinessByCategory = ({params}) => {
     };
      
     return (
-      <div></div>
+      <div>
+        <BusinessList title={params.category} businessList={businessList} />
+      </div>
     )
    
   

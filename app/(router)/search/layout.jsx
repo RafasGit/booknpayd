@@ -10,11 +10,7 @@ import SideCategoryBar from "./_components/SideCategoryBar";
 const layout = ({ children }) => {
   
   
-  
-  const { data: session, status } = useSession(); // Destructure session data and status
-
-  // Initialize state with session data
-  const [sessionUser, setSessionUser] = useState(session.user);
+   
 
   // useEffect(() => {
   //   // Update state when session changes
@@ -32,14 +28,8 @@ const layout = ({ children }) => {
   //   return redirect('/')
   // }
 
-  const userId = descopeClient.management.user.loadByUserId(userId)
+ 
 
-  
-  console.log("Failed to load user.")
-  console.log("Status Code: " + resp.code)
-  console.log("Error Code: " + resp.error.errorCode)
-  console.log("Error Description: " + resp.error.errorDescription)
-  console.log("Error Message: " + resp.error.errorMessage)
 
 
   return (

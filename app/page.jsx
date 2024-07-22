@@ -38,7 +38,7 @@ const getBusinessList = () => {
 
 return (
   <div>
-    <Hero />
+    {/* <Hero /> */}
     <div className="items-center">
     <CategoryList categoryList={categoryList} />
 

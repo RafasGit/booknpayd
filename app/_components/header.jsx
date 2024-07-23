@@ -1,7 +1,6 @@
 "use client";
 import { signIn, useSession, signOut } from "next-auth/react";
 
-import Image from "next/image";
 import { Button } from "../../components/ui/button";
 import {
     DropdownMenu,
@@ -11,12 +10,13 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
   } from "../../components/ui/dropdown-menu";
-  import { NavbarRoutes } from "@/components/navbar-routes";
+  //import { NavbarRoutes } from "@/components/navbar-routes";
  import { Navbar } from "./navbar";
   
 import { LogOut } from "lucide-react";
 import  React, { useEffect } from 'react'
 import Link from "next/link";
+//import Image from "next/image";
 
 
 const Header = () => {
@@ -29,7 +29,6 @@ const Header = () => {
   return (
     <div className="p-5 shadow-sm flex justify-between">
     <div className="flex gap-8 items-center">
-      {/* <Image src="/logo.svg" alt="logo" width={50} height={50} /> */}
       <div className="md:flex items-center gap-6">
        <Navbar />
       </div>

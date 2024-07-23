@@ -16,8 +16,7 @@ import {
 import { LogOut } from "lucide-react";
 import  React, { useEffect } from 'react'
 import Link from "next/link";
-//import Image from "next/image";
-
+import Image from "next/image";
 
 const Header = () => {
     const { data } = useSession();

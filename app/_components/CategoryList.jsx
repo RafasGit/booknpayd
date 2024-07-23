@@ -20,7 +20,7 @@ const CategoryList = ({ categoryList }) => {
                   width={35}
                   height={35}
                 />
-                <h2 className="text-primary">{category.name}</h2>
+                <h2 className="text-primary sm:hidden">{category.name}</h2>
               </Link>
             ))
           : [1, 2, 3, 4, 5, 6].map((item, index) => (
